@@ -310,7 +310,7 @@ class VanillaDataManager(DataManager):  # pylint: disable=abstract-method
         self,
         config: VanillaDataManagerConfig,
         device: Union[torch.device, str] = "cpu",
-        test_mode: Literal["test", "val", "inference"] = "val",
+        test_mode: Literal["test", "val", "inference"] = "test",
         world_size: int = 1,
         local_rank: int = 0,
         **kwargs,  # pylint: disable=unused-argument
@@ -321,7 +321,7 @@ class VanillaDataManager(DataManager):  # pylint: disable=abstract-method
         self.local_rank = local_rank
         self.sampler = None
         self.test_mode = test_mode
-        self.test_split = "test" if test_mode in ["test", "inference"] else "val"
+        self.test_split = "test"  # if test_mode in ["test", "inference"] else "val"
         self.dataparser = self.config.dataparser.setup()
 
         self.train_dataset = self.create_train_dataset()

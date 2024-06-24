@@ -184,7 +184,6 @@ temp*
 external/
 __MACOSX/
 node_modules/
-bash/
 cache/
 package-lock.json
 camera_paths/

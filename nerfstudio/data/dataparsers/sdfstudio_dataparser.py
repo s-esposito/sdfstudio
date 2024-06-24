@@ -184,7 +184,7 @@ def filter_list(list_to_filter, indices):
         return [list_to_filter[i] for i in indices]
     else:
         return []
-
+    
 
 @dataclass
 class SDFStudio(DataParser):
